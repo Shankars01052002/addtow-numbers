@@ -1,0 +1,39 @@
+package com.example.addtownumber
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        val ED1 = findViewById<EditText>(R.id.editTextText)
+
+        val ED2 = findViewById<EditText>(R.id.editTextText2)
+
+        val Button1 = findViewById<Button>(R.id.button)
+
+        Button1.setOnClickListener {
+
+            val txt = findViewById<TextView>(R.id.textView)
+
+            val num1 = ED1.text.toString().toInt()
+
+            val num2 = ED2.text.toString().toInt()
+
+            val res = num1+num2
+
+            txt.text = "Result " + res
+
+            Toast.makeText(this, txt.text, Toast.LENGTH_LONG).show()
+
+        }
+
+    }
+
+}
